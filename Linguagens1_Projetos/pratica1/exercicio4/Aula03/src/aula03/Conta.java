@@ -3,37 +3,58 @@ package aula03;
 public class Conta {
 
     int numero;
-    String titular;
-    String cpf;
     double saldo;
+    Cliente titular = new Cliente();
+
+    void exibirInfo(Conta c1) {
+        System.out.println(c1.titular.nome + " " + c1.titular.sobrenome + "\n cpf:" + c1.titular.cpf + "\n");
+    }
 
     void visualizarSaldo() {
         System.out.println("Saldo : \n" + this.saldo);
-        
 
     }
 
-    void depositar (double valor) {
-        if(valor > 0){
-        this.saldo = this.saldo + valor;
+    void depositar(double valor) {
+        if (valor > 0) {
+            this.saldo = this.saldo + valor;
         }
 
     }
 
-    void sacar (double valorr) {
-       
- 
-        if(valorr <= this.saldo){
-            
-        this.saldo = this.saldo - valorr;
+    boolean sacar(double valorr) {
+
+        if (this.saldo < valorr) {
+
+            return false;
+
         } else {
-            System.out.println("vá juntar mais cash ok?");
+            System.out.println("saque de : " + valorr);
+            this.saldo = this.saldo - valorr;
+            return true;
+
         }
 
     }
 
-    void transferirDinheiro () {
+    boolean transferirPara(Conta c1, double valor) {
+        
+        if (this.saldo >=valor) {
+        System.out.println("transferencia de: " + valor);
+        return true;
+        } 
+        
+        
+       /* if (this.sacar(valor)) {
+            c1.depositar(valor);
+            System.out.println("blz transferiu valor de: " + valor);
+            return true;
 
+        } else {
+            System.out.println("errm não rola a transferencia'-' ");
+            return false;
+        }
+*/
     }
 
 }
