@@ -7,7 +7,9 @@ public class Conta {
     private Cliente titular = new Cliente();
 
     public void criarCliente(String nome, String sobrenome, String cpf){
-       this.titular.getClass();
+       this.titular.nome = nome;
+       this.titular.sobrenome = sobrenome;
+       this.titular.cpf = cpf;
        System.out.println(titular + "\n"); 
     }
    public void exibirInfo(Conta c1) {
