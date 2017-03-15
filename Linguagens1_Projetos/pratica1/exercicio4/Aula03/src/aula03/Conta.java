@@ -6,8 +6,12 @@ public class Conta {
     private double saldo;
     private Cliente titular = new Cliente();
 
+    public void criarCliente(String nome, String sobrenome, String cpf){
+       this.titular.getClass();
+       System.out.println(titular + "\n"); 
+    }
    public void exibirInfo(Conta c1) {
-        System.out.println(c1.titular.nome + " " + c1.titular.sobrenome + "\n cpf:" + c1.titular.cpf + "\n");
+        System.out.println(c1.titular + "\n");
     }
 
    public void visualizarSaldo() {
