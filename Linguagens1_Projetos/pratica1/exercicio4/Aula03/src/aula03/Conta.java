@@ -42,7 +42,10 @@ public class Conta {
         if (this.saldo >=valor) {
         System.out.println("transferencia de: " + valor);
         return true;
-        } 
+        } else {
+            System.out.println("não da pra transferir");
+            return false;
+        }
         
         
        /* if (this.sacar(valor)) {
