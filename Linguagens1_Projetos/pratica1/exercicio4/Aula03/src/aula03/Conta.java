@@ -2,27 +2,27 @@ package aula03;
 
 public class Conta {
 
-    int numero;
-    double saldo;
-    Cliente titular = new Cliente();
+    private int numero;
+    private double saldo;
+    private Cliente titular = new Cliente();
 
-    void exibirInfo(Conta c1) {
+   public void exibirInfo(Conta c1) {
         System.out.println(c1.titular.nome + " " + c1.titular.sobrenome + "\n cpf:" + c1.titular.cpf + "\n");
     }
 
-    void visualizarSaldo() {
+   public void visualizarSaldo() {
         System.out.println("Saldo : \n" + this.saldo);
 
     }
 
-    void depositar(double valor) {
+    public void depositar(double valor) {
         if (valor > 0) {
             this.saldo = this.saldo + valor;
         }
 
     }
 
-    boolean sacar(double valorr) {
+    public boolean sacar(double valorr) {
 
         if (this.saldo < valorr) {
 
@@ -37,18 +37,17 @@ public class Conta {
 
     }
 
-    boolean transferirPara(Conta c1, double valor) {
-        
-        if (this.saldo >=valor) {
-        System.out.println("transferencia de: " + valor);
-        return true;
+    public boolean transferirPara(Conta c1, double valor) {
+
+        if (this.saldo >= valor) {
+            System.out.println("transferencia de: " + valor);
+            return true;
         } else {
             System.out.println("não da pra transferir");
             return false;
         }
-        
-        
-       /* if (this.sacar(valor)) {
+
+        /* if (this.sacar(valor)) {
             c1.depositar(valor);
             System.out.println("blz transferiu valor de: " + valor);
             return true;
@@ -57,7 +56,8 @@ public class Conta {
             System.out.println("errm não rola a transferencia'-' ");
             return false;
         }
-*/
+(não quero q fique mostrando mensagenzinha do sacar '-' )*/
     }
+
 
 }
