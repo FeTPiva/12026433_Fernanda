@@ -4,19 +4,22 @@ public class Conta {
 
     private int numero;
     private double saldo;
-    private Cliente titular = new Cliente();
+    private Cliente titular;
 
-    public void criarCliente(String nome, String sobrenome, String cpf){
-       this.titular.nome = nome;
-       this.titular.sobrenome = sobrenome;
-       this.titular.cpf = cpf;
-       System.out.println(titular + "\n"); 
-    }
-   public void exibirInfo(Conta c1) {
-        System.out.println(c1.titular + "\n");
+    public void criarCliente(String nome, String sobrenome, String cpf) {
+        this.titular = new Cliente();
+        this.titular.setNome(nome);
+        this.titular.setSobrenome(sobrenome);
+        this.titular.setCpf(cpf);
+
+        System.out.println(this.titular.getNome() + " " + this.titular.getSobrenome()+ "\n cpf:" + this.titular.getCpf());
     }
 
-   public void visualizarSaldo() {
+    public void exibirInfo(Conta c1) {
+        System.out.println(c1.titular.getNome() + " " + c1.titular.getSobrenome()+"\n cpf:" + c1.titular.getCpf());
+    }
+
+    public void visualizarSaldo() {
         System.out.println("Saldo : \n" + this.saldo);
 
     }
@@ -64,6 +67,5 @@ public class Conta {
         }
 (não quero q fique mostrando mensagenzinha do sacar '-' )*/
     }
-
 
 }
