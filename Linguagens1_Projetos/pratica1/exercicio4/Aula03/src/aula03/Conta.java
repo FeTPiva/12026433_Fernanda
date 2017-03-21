@@ -6,17 +6,25 @@ public class Conta {
     private double saldo;
     private Cliente titular;
 
+    public double getSaldo() {
+        return this.saldo;
+    }
+
+    public double setSaldo(int saldo) {
+        return this.saldo = saldo;
+    }
+
     public void criarCliente(String nome, String sobrenome, String cpf) {
         this.titular = new Cliente();
         this.titular.setNome(nome);
         this.titular.setSobrenome(sobrenome);
         this.titular.setCpf(cpf);
 
-        System.out.println(this.titular.getNome() + " " + this.titular.getSobrenome()+ "\n cpf:" + this.titular.getCpf());
+        System.out.println(this.titular.getNome() + " " + this.titular.getSobrenome() + "\n cpf:" + this.titular.getCpf());
     }
 
     public void exibirInfo(Conta c1) {
-        System.out.println(c1.titular.getNome() + " " + c1.titular.getSobrenome()+"\n cpf:" + c1.titular.getCpf());
+        System.out.println(c1.titular.getNome() + " " + c1.titular.getSobrenome() + "\n cpf:" + c1.titular.getCpf());
     }
 
     public void visualizarSaldo() {

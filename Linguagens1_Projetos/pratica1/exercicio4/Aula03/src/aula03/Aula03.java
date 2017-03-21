@@ -11,7 +11,7 @@ public class Aula03 {
 
         
       
-       c1.saldo = 1000;
+       c1.setSaldo(1000);
        c1.visualizarSaldo();
        c1.sacar(200);
        c1.visualizarSaldo();
