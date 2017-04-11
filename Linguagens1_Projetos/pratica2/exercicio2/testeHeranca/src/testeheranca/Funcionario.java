@@ -2,8 +2,8 @@
 package testeheranca;
 
 
-public class Vendedor extends Funcionario{
-    
+public class Funcionario {
+     
    protected String cpf;
     protected String registro;
     protected double salarioBase;
@@ -15,7 +15,7 @@ public class Vendedor extends Funcionario{
    
 
     //creator
-    public  Vendedor(String nome, String cpf, String registro, double salario, double ttlv, double hextra, Gerente g) {
+    public  Funcionario(String nome, String cpf, String registro, double salario, double ttlv, double hextra, Gerente g) {
         this.nomeCompleto = nome;
         this.cpf = cpf;
         this.salarioBase = salario;
@@ -105,5 +105,14 @@ public class Vendedor extends Funcionario{
     public void contabilizarVenda(double venda, Gerente nsei) {
         this.totalVendas = this.totalVendas + venda;
     }
+    public boolean autenticaRegistro(Vendedor v, String registro) {
+        if (v.setRegistro() == registro) {
+            System.out.println("ok");
+            return true;
+        } else {
+            System.out.println("não");
+            return false;
+
+        }
     
 }
