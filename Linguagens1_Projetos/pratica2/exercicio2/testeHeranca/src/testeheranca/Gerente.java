@@ -13,7 +13,6 @@ public class Gerente extends Vendedor {
         this.cpf = cpf;
         this.salarioBase = salario;
         this.totalVendas = ttlv;
-
         this.registro = registro;
         this.senha = senha;
     }

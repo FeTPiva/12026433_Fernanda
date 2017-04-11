@@ -112,7 +112,6 @@ public class Funcionario {
         } else {
             System.out.println("não");
             return false;
-
         }
     
 }
