@@ -3,14 +3,9 @@ package testeheranca2;
 
 
 public class Vendedor extends Funcionario{
-    protected String cpf;
-    protected String registro;
-    protected double salarioBase;
-    protected String nomeCompleto;
-    public static double taxaComissao = 0.03;
-    private double horaExtra;
-    protected double totalVendas;
     
+    public static double taxaComissao = 0.03;
+    public static double totalVendas;
    
 
     //creator

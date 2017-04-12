@@ -6,18 +6,16 @@ public class Funcionario {
     protected String registro;
     protected double salarioBase;
     protected String nomeCompleto;
-   
-   
 
     //creator
     public Funcionario(String nome, String cpf, String registro, double salario) {
         this.nomeCompleto = nome;
         this.cpf = cpf;
         this.salarioBase = salario;
-       
         this.registro = registro;
     }
 
+    
     //sett
     public void setNomeCompleto(String nome) {
         nome = this.nomeCompleto;
@@ -39,6 +37,7 @@ public class Funcionario {
 
     }
 
+    
     //gets
     public String getNomeCompleto() {
         return this.nomeCompleto;
