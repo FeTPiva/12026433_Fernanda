@@ -1,7 +1,9 @@
-package testeheranca;
 
-public class Gerente {
+package testeheranca2;
 
+
+public class Gerente extends Funcionario {
+    
     private double senha;
     private double numeroVendedores;
 
@@ -38,5 +40,5 @@ public class Gerente {
 
         }
     }
-
+    
 }

@@ -1,10 +1,9 @@
 
-package testeheranca;
+package testeheranca2;
 
 
-public class Vendedor {
-    
-   protected String cpf;
+public class Vendedor extends Funcionario{
+    protected String cpf;
     protected String registro;
     protected double salarioBase;
     protected String nomeCompleto;
@@ -105,5 +104,6 @@ public class Vendedor {
     public void contabilizarVenda(double venda, Gerente nsei) {
         this.totalVendas = this.totalVendas + venda;
     }
+    
     
 }
