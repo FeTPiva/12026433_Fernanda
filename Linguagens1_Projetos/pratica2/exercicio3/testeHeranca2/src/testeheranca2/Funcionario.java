@@ -57,11 +57,15 @@ public class Funcionario {
     }
 
     public double salarioDoMes() {
-        return this.salarioBase + this.horaExtra + this.calcularComissao();
+        return this.salarioBase + this.calcularComissao();
     }
 
     public void exibirResumo() {
         System.out.println(nomeCompleto + "\n" + this.calcularComissao() + this.salarioDoMes());
     }
-
+    
+ public void calcularBonus( double bInd,Concessionaria bonus){
+      return  bonus;
+    }
 }
+//se colocar final antes dos public etc  herda e n sobrescreve ^-^. overrride deixa sobrescreve e tal
