@@ -15,7 +15,6 @@ public class Funcionario {
         this.registro = registro;
     }
 
-    
     //sett
     public void setNomeCompleto(String nome) {
         nome = this.nomeCompleto;
@@ -37,7 +36,6 @@ public class Funcionario {
 
     }
 
-    
     //gets
     public String getNomeCompleto() {
         return this.nomeCompleto;
@@ -57,15 +55,15 @@ public class Funcionario {
     }
 
     public double salarioDoMes() {
-        return this.salarioBase + this.calcularComissao();
+        return this.salarioBase;
     }
 
     public void exibirResumo() {
-        System.out.println(nomeCompleto + "\n" + this.calcularComissao() + this.salarioDoMes());
+        System.out.println(nomeCompleto + "\n" + this.salarioDoMes());
     }
-    
- public void calcularBonus( double bInd,Concessionaria bonus){
-      return  bonus;
+
+    public double calcularBonus(Concessionaria bonus) {
+        return bonus.getBonusIndividual();
     }
 }
 //se colocar final antes dos public etc  herda e n sobrescreve ^-^. overrride deixa sobrescreve e tal

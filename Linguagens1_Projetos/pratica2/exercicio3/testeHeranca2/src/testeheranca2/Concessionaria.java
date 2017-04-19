@@ -3,10 +3,12 @@ package testeheranca2;
 public class Concessionaria {
 
     static double taxaBonus = 0.05;
-    double totalVendas;
+    private double totalVendas;
     static double totalFuncionarios;
-    double bonusIndividual;
+    private double bonusIndividual;
 
+    
+    //contrutorzaum
     public Concessionaria(double bonus, double totalVendas) {
         this.bonusIndividual = bonus;
         this.totalVendas = totalVendas;
@@ -19,14 +21,14 @@ public class Concessionaria {
     }
 
     public double getBonusIndividual() {
-        return this.bonusIndividual;
+        return this.bonusIndividual = this.bonusIndividual*this.taxaBonus;
     }
 
     //resto
     
     public double bonificacao() {
-double a;
-        return a =this.bonusIndividual = (this.totalVendas / this.totalFuncionarios) * taxaBonus;
+
+        return this.bonusIndividual = (this.totalVendas / this.totalFuncionarios) * taxaBonus;
 
     }
 

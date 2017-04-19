@@ -1,18 +1,31 @@
-
 package testeheranca2;
 
-
 public class Gerente extends Funcionario {
-    
-    private double senha;
-    private double numeroVendedores;
 
-    public void Gerente(String nome, String cpf, String registro, double salario, double ttlv, double hextra) {
-       super(nome, cpf, registro, salarioBase, ttlv, hextra)   
+    private String senha;
+    private double numeroVendedores;
+    private double vendasGerente;
+
+   
+
+    public Gerente(String nome, String cpf, String registro, double salario, String senha, double vends) {
+        super(nome, cpf, registro, salario);
+        this.senha = senha;
+        this.numeroVendedores = vends;
+        
+    }
+
+    public double bonusGerente(Concessionaria x) {
+        return this.salarioBase * 0.25 + this.vendasGerente * 0.05 + x.getBonusIndividual();
 
     }
 
-    public boolean darAumento(Vendedor v, double taxa, double senha) {
+    public double salarioDoMes(Concessionaria x) {
+        return this.salarioBase + this.bonusGerente(x);
+
+    }
+
+    public boolean darAumento(Vendedor v, double taxa, String senha) {
         //comparar se é embaixo do gerente, senha, e ai jogar a taxa.... 
         if (this.senha == senha) {
             v.salarioBase = v.salarioBase * taxa;
@@ -29,15 +42,15 @@ public class Gerente extends Funcionario {
         return this.numeroVendedores = this.numeroVendedores - 1;
     }
 
-    public boolean autentica(double senha) {
+    public boolean autentica(String senha) {
         if (this.senha == senha) {
             System.out.println("ok");
             return true;
         } else {
-            System.out.println("não");
+            System.out.println("noob");
             return false;
 
         }
     }
-    
+
 }

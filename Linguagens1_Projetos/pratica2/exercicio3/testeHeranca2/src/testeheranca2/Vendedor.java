@@ -1,10 +1,5 @@
 package testeheranca2;
 
-import static testeheranca2.Concessionaria.taxaBonus;
-import static testeheranca2.Concessionaria.totalFuncionarios;
-
-
-
 public class Vendedor extends Funcionario {
 
     public static double taxaComissao = 0.03;
@@ -27,27 +22,26 @@ public class Vendedor extends Funcionario {
         return this.taxaComissao;
     }
 
-    public double calcularComissao() {
-        return taxaComissao * this.vendasVendedor;
-        
+    public double calcularComissao(Concessionaria x) {
+        return this.taxaComissao * this.vendasVendedor + this.calcularBonusVendedor(x);
+
     }
- 
 
-    public double salarioDoMes() {
-        return this.salarioBase + this.calcularComissao;
-               
-            }
+    public double salarioDoMes(Concessionaria x) {
+        return this.salarioBase + this.calcularComissao(x);
 
-    public void exibirResumo(Funcionario x, Concessionaria y) {
-        System.out.println(this.nomeCompleto + "\n" + this.calcularComissao(x) + this.salarioDoMes(y));
+    }
+
+    public void exibirResumo( Concessionaria y) {
+        System.out.println(super.nomeCompleto + "\n" + this.calcularComissao(y) + this.salarioDoMes(y));
     }
 
     public void contabilizarVenda(double venda, Gerente nsei) {
-        this.totalVendas = this.totalVendas + venda;
+        this.vendasVendedor = this.vendasVendedor + venda;
     }
 
-    @Override
-    public void calcularBonus(double bInd, Concessionaria bonus) {
-        return this.vendas * 0.25 + bonus;
+    public double calcularBonusVendedor(Concessionaria bonus) {
+       return this.vendasVendedor * 0.25 + bonus.getBonusIndividual();
+        
     }
 }
