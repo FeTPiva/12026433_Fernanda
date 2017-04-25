@@ -1,6 +1,9 @@
 package testeheranca2;
 
+
+
 public class Funcionario {
+    
 
     protected String cpf;
     protected String registro;
