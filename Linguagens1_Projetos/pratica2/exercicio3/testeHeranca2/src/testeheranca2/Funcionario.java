@@ -12,7 +12,7 @@ public class Funcionario {
 
     //creator
     public Funcionario(String nome, String cpf, String registro, double salario) {
-        this.nomeCompleto = nome;
+        this.nomeCompleto = nome;   //da pra usa o set
         this.cpf = cpf;
         this.salarioBase = salario;
         this.registro = registro;
@@ -65,8 +65,9 @@ public class Funcionario {
         System.out.println(nomeCompleto + "\n" + this.salarioDoMes());
     }
 
-    public double calcularBonus(Concessionaria bonus) {
-        return bonus.getBonusIndividual();
+    public double calcularBonus(double bonus) { 
+        return bonus;
     }
+    
 }
 //se colocar final antes dos public etc  herda e n sobrescreve ^-^. overrride deixa sobrescreve e tal

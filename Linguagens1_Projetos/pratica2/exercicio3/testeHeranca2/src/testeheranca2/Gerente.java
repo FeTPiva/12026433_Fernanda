@@ -5,14 +5,14 @@ public class Gerente extends Funcionario {
     private String senha;
     private double numeroVendedores;
     private double vendasGerente;
+    protected static double taxaComissao = 0.05;
+    protected static double taxaExtra = 0.25;
 
-   
-
-    public Gerente(String nome, String cpf, String registro, double salario, String senha, double vends) {
+    public Gerente(String nome, String cpf, String registro, double salario) {
         super(nome, cpf, registro, salario);
         this.senha = senha;
-        this.numeroVendedores = vends;
         
+
     }
 
     public double bonusGerente(Concessionaria x) {
@@ -53,4 +53,20 @@ public class Gerente extends Funcionario {
         }
     }
 
-}
+    @Override
+    public double calcularBonus(double bi) {
+        return this.vendasGerente * Gerente.taxaComissao + bi + this.salarioBase * this.taxaExtra;
+
+    }
+
+    public double remuneracaoFinal(double bI) {
+        return this.calcularBonus(bI)+ this.salarioBase;
+    }
+
+    public void realizarVenda(double valor, double reg) {
+        if (valor > 0) {
+            this.vendasGerente += valor;
+        }
+    }
+    
+    }

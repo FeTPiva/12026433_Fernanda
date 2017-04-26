@@ -2,13 +2,12 @@ package testeheranca2;
 
 public class Vendedor extends Funcionario {
 
-    public static double taxaComissao = 0.03;
-    public static double vendasVendedor;
+    protected static double taxaComissao = 0.03;
+    private double vendasVendedor = 0;
 
     //creator
-    public Vendedor(String nome, String cpf, String registro, double salario, double vendas) {
+    public Vendedor(String nome, String cpf, String registro, double salario) {
         super(nome, cpf, registro, salario);
-        this.vendasVendedor = vendas;
     }
 
 //sets
@@ -22,26 +21,35 @@ public class Vendedor extends Funcionario {
         return this.taxaComissao;
     }
 
-    public double calcularComissao(Concessionaria x) {
-        return this.taxaComissao * this.vendasVendedor + this.calcularBonusVendedor(x);
-
-    }
-
-    public double salarioDoMes(Concessionaria x) {
-        return this.salarioBase + this.calcularComissao(x);
-
-    }
-
-    public void exibirResumo( Concessionaria y) {
-        System.out.println(super.nomeCompleto + "\n" + this.calcularComissao(y) + this.salarioDoMes(y));
-    }
-
-    public void contabilizarVenda(double venda, Gerente nsei) {
-        this.vendasVendedor = this.vendasVendedor + venda;
-    }
-
-    public double calcularBonusVendedor(Concessionaria bonus) {
-       return this.vendasVendedor * 0.25 + bonus.getBonusIndividual();
+    public void realizarVenda(double valor, double reg) {
+        if (valor > 0) {
+            this.vendasVendedor += valor;
+        }
         
+
+    }
+    public double getVendas(){
+        return this.vendasVendedor;
+    }
+
+    @Override
+    public double calcularBonus(double bInd) {
+        return this.vendasVendedor * Vendedor.taxaComissao + bInd;
+    }
+
+    public double calcularComissao(double a) {
+        
+        return this.taxaComissao * this.vendasVendedor + this.calcularBonus(a);
+
+    }
+
+   @Override
+    public void exibirResumo() {
+        super.exibirResumo();
+        System.out.println(this.vendasVendedor);
+    }
+
+   public double remuneracaoFinal(double bI) {
+        return this.calcularBonus(bI)+ this.salarioBase;
     }
 }
