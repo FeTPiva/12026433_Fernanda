@@ -2,7 +2,7 @@ package testeheranca2;
 
 
 
-public class Funcionario {
+abstract public class Funcionario {
     
 
     protected String cpf;

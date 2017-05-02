@@ -8,7 +8,8 @@ public class Concessionaria {
     private Gerente[] gerente;
     private int nVendedor = 0;
     private int nGerente = 0;
-
+    
+    
     //contrutorzaum
     public Concessionaria(int nV, int nG) {
         vendedor = new Vendedor[nV];
@@ -22,13 +23,11 @@ public class Concessionaria {
     }
 
     //gets
-    public double getTotalVendas() {
-        return this.totalVendas;
-    }
+    //public double getTotalVendas() {
+   //     return this.totalVendas;
+   // }
 
-    public double getBonusIndividual() {
-        return this.bonusIndividual = this.bonusIndividual * this.taxaBonus;
-    }
+   
 
     //resto
     public boolean novoVendedor(String nome, String cpf, String registro, double salario) {
@@ -67,12 +66,12 @@ public class Concessionaria {
         
         for (int i = 0; i < this.nVendedor; i++) {
             double totalVendas;
-            totalVendas += this.vendedor[i].getVendas();
+            totalVendas =+ this.vendedor[i].getVendas();
         }
 
         for (int i = 0; i < this.nGerente; i++) {
             double totalVendas;
-            totalVendas += this.vendedor[i].getVendas();
+            totalVendas =+ this.vendedor[i].getVendas();
         }
         return 0;
     }

@@ -15,16 +15,6 @@ public class Gerente extends Funcionario {
 
     }
 
-    public double bonusGerente(Concessionaria x) {
-        return this.salarioBase * 0.25 + this.vendasGerente * 0.05 + x.getBonusIndividual();
-
-    }
-
-    public double salarioDoMes(Concessionaria x) {
-        return this.salarioBase + this.bonusGerente(x);
-
-    }
-
     public boolean darAumento(Vendedor v, double taxa, String senha) {
         //comparar se é embaixo do gerente, senha, e ai jogar a taxa.... 
         if (this.senha == senha) {
