@@ -13,6 +13,7 @@ public class Concessionaria {
     //contrutorzaum
     public Concessionaria(int nV, int nG) {
         vendedor = new Vendedor[nV];
+        
         gerente = new Gerente[nG];
 
     }
@@ -35,7 +36,9 @@ public class Concessionaria {
         if (nVendedor < this.vendedor.length) {
             this.vendedor[nVendedor] = new Vendedor(nome, cpf, registro, salario);
             this.nVendedor++;
+            this.totalFuncionarios++;
             result = true;
+            
         } else {
             result = false;
         }
@@ -76,4 +79,6 @@ public class Concessionaria {
         return 0;
     }
 
+    
+    
 }
