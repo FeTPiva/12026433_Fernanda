@@ -20,5 +20,10 @@ public abstract class Funcionario {
         return this.taxa = taxa;
     }
     
-    
+    public double setSalarioBase(double s){
+        return this.salario =s;
+    }
+     public double getSalarioBase(){
+         return this.salario;
+     }
 }

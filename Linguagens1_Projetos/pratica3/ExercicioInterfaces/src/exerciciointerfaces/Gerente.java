@@ -1,31 +1,33 @@
 package exerciciointerfaces;
 
 public class Gerente extends Funcionario implements IAutenticavel {
+private String psw;
+  
 
-   private Integer senha;
-
-    public Gerente(String nome, String reg, double sal, Integer s) {
+    public Gerente(String nome, String reg, double sal,String s) {
         this.nome = nome;
         this.registro = reg;
         this.salario = sal;
-        this.senha = s;
+        this.psw = s;
     }
 
-    public double setSenha(Integer s){
-        return this.senha = s;
+    public String setSenha(String s){
+        return this.psw = s;
     }
             
-    public boolean autenticar(Integer x) {
-
-        if (x == this.senha) {
-            return true;
-
-        } else {
-            return false;
-        }
+   @Override
+    public boolean autenticar(String x){
+        return this.psw.equals(x);
     }
 
-    
+    public boolean alterarSenha(String nova, String velha) {
+        boolean retorno = false;
+        if (autenticar(velha)) {
+            this.psw = nova;
+            retorno = true;
+        }
+        return retorno;
+    }
     
     
     
