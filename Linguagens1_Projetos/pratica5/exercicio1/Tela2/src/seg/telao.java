@@ -11,6 +11,7 @@ package seg;
  */
 public class telao extends javax.swing.JFrame {
 
+    enum a{n1, n2};
     /**
      * Creates new form telao
      */
@@ -42,13 +43,16 @@ public class telao extends javax.swing.JFrame {
         sub = new javax.swing.JButton();
         divi = new javax.swing.JButton();
         vezes = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
+        enter = new javax.swing.JButton();
+        clear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CALCULADORA");
         setBackground(new java.awt.Color(153, 204, 255));
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setText("7");
@@ -140,18 +144,40 @@ public class telao extends javax.swing.JFrame {
 
         sub.setBackground(new java.awt.Color(255, 255, 255));
         sub.setText("-");
+        sub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subActionPerformed(evt);
+            }
+        });
 
         divi.setBackground(new java.awt.Color(255, 255, 255));
         divi.setText("/");
+        divi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                diviActionPerformed(evt);
+            }
+        });
 
         vezes.setBackground(new java.awt.Color(255, 255, 255));
         vezes.setText("X");
-
-        jButton15.setBackground(new java.awt.Color(255, 255, 255));
-        jButton15.setText("enter");
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
+        vezes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
+                vezesActionPerformed(evt);
+            }
+        });
+
+        enter.setBackground(new java.awt.Color(255, 255, 255));
+        enter.setText("enter");
+        enter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enterActionPerformed(evt);
+            }
+        });
+
+        clear.setText("Clear");
+        clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearActionPerformed(evt);
             }
         });
 
@@ -185,30 +211,33 @@ public class telao extends javax.swing.JFrame {
                                         .addComponent(jButton9)))
                                 .addGap(47, 47, 47)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(soma)
                                     .addComponent(sub)
                                     .addComponent(divi)
-                                    .addComponent(vezes)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
-                                .addComponent(jButton15))))
+                                    .addComponent(vezes)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(soma)
+                                        .addGap(34, 34, 34)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(enter)
+                                            .addComponent(clear)))))
+                            .addComponent(jButton10)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
+                        .addGap(103, 103, 103)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(77, 77, 77))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(77, 77, 77)
+                .addGap(60, 60, 60)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
+                .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
-                    .addComponent(soma))
+                    .addComponent(soma)
+                    .addComponent(clear))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
@@ -227,9 +256,9 @@ public class telao extends javax.swing.JFrame {
                         .addComponent(vezes)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(divi)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton15)
+                    .addComponent(enter)
                     .addComponent(jButton10))
                 .addGap(78, 78, 78))
         );
@@ -239,65 +268,88 @@ public class telao extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        jLabel1.setText("7" + jLabel1.getText());
+        jLabel1.setText(jLabel1.getText()+ "7");
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        jLabel1.setText("8" + jLabel1.getText());
+        jLabel1.setText(jLabel1.getText()+ "8");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        jLabel1.setText("9" + jLabel1.getText());
+        jLabel1.setText(jLabel1.getText()+"9");
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        jLabel1.setText("4" + jLabel1.getText());
+        jLabel1.setText(jLabel1.getText()+ "4");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        jLabel1.setText("5" + jLabel1.getText());
+        jLabel1.setText(jLabel1.getText()+"5");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        jLabel1.setText("6" + jLabel1.getText());
+        jLabel1.setText(jLabel1.getText()+ "6");
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-        jLabel1.setText("1" + jLabel1.getText());
+        jLabel1.setText(jLabel1.getText()+"1");
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
-        jLabel1.setText("2" + jLabel1.getText());
+        jLabel1.setText( jLabel1.getText()+ "2");
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
-        jLabel1.setText("3" + jLabel1.getText());
+        jLabel1.setText(jLabel1.getText()+"3");
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
-        jLabel1.setText("0" + jLabel1.getText());
+        jLabel1.setText(jLabel1.getText()+"0");
     }//GEN-LAST:event_jButton10ActionPerformed
 
+    
     private void somaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_somaActionPerformed
         // TODO add your handling code here:
         String a = jLabel1.getText();
-        jLabel1.setText("");
-        
+        jLabel1.setText("");                               
     }//GEN-LAST:event_somaActionPerformed
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        jLabel1.setText();
-    }//GEN-LAST:event_jButton15ActionPerformed
+    
+    private void enterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterActionPerformed
+        
+            String a = jLabel1.getText();
+                
+    }//GEN-LAST:event_enterActionPerformed
+
+    private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
+        // TODO add your handling code here:
+        jLabel1.setText("");
+    }//GEN-LAST:event_clearActionPerformed
+
+    
+    private void subActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_subActionPerformed
+
+    
+    private void vezesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vezesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vezesActionPerformed
+
+    
+    private void diviActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diviActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_diviActionPerformed
 
     /**
      * @param args the command line arguments
@@ -335,10 +387,11 @@ public class telao extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton clear;
     private javax.swing.JButton divi;
+    private javax.swing.JButton enter;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
