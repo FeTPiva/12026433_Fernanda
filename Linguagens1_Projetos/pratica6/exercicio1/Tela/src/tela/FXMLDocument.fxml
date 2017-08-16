@@ -8,13 +8,47 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="690.0" prefWidth="777.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela.FXMLDocumentController">
-   <children>
-      <TabPane blendMode="SCREEN" layoutX="14.0" layoutY="18.0" prefHeight="690.0" prefWidth="777.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <tabs>
-          <Tab closable="false" text="Cadastro Aluno" />
-          <Tab text="Pesquisar" />
-        </tabs>
-      </TabPane>
-   </children>
-</AnchorPane>
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="697.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela.FXMLDocumentController">
+  <tabs>
+    <Tab closable="false" text="Cadastro Aluno">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="498.0" prefWidth="684.0">
+               <children>
+                  <Button fx:id="btnSalvar" layoutX="571.0" layoutY="493.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Salvar" />
+                  <Label layoutX="273.0" layoutY="67.0" prefHeight="24.0" prefWidth="50.0" text="Nome" />
+                  <Label layoutX="273.0" layoutY="213.0" text="Endereço" />
+                  <Label layoutX="281.0" layoutY="309.0" text="CPF" />
+                  <Label layoutX="284.0" layoutY="389.0" text="RG" />
+                  <Label layoutX="282.0" layoutY="139.0" text="Idade" />
+                  <ImageView fx:id="img" fitHeight="157.0" fitWidth="178.0" layoutX="14.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../../default-user-image.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="nField" layoutX="273.0" layoutY="94.0" />
+                  <TextField fx:id="iField" layoutX="274.0" layoutY="172.0" />
+                  <TextField fx:id="eField" layoutX="274.0" layoutY="251.0" />
+                  <TextField fx:id="cpfField" layoutX="274.0" layoutY="343.0" />
+                  <TextField fx:id="rgField" layoutX="282.0" layoutY="424.0" />
+                  <Label fx:id="test" layoutX="309.0" layoutY="497.0" text="Label" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab closable="false" text="Pesquisar">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView layoutX="132.0" layoutY="59.0" prefHeight="319.0" prefWidth="377.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="Nome" />
+                      <TableColumn prefWidth="75.0" text="Idade" />
+                        <TableColumn prefWidth="75.0" text="Cpf" />
+                        <TableColumn prefWidth="75.0" text="rg" />
+                        <TableColumn prefWidth="75.0" text="Endereço" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
