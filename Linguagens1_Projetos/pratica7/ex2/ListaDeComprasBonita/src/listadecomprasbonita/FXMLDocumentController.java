@@ -15,13 +15,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.text.TextFlow;
 
-/**
- *
- * @author Aluno 07
- */
-public class FXMLDocumentController implements Initializable {
-    
+
+public class FXMLDocumentController extends ListaDeCompras implements Initializable {
+
     @FXML
     private TextField entrada;
     @FXML
@@ -32,37 +30,37 @@ public class FXMLDocumentController implements Initializable {
     private Button button3;
     @FXML
     private TextArea exibicao;
-    ArrayList<String> lista = new ArrayList<String>();
-    @FXML //add item
-    private void handleButtonAction(ActionEvent event) {
-        
-        
-        lista.add(entrada.getText());
-              
-        
+
+    ListaDeCompras compra = new ListaDeCompras();
+    @FXML
+    private Button clear;
+
+    @FXML
+    private void handleButton1Action(ActionEvent event) {
+        compra.adicionarItem(entrada.getText());
+
     }
+
     @FXML //remover item
     private void handleButton2Action(ActionEvent event) {
-       
+        compra.removerItem(entrada.getText());
     }
+
     @FXML //mostrar lista
     private void handleButton3Action(ActionEvent event) {
-       exibicao.setText(lista.());
+     compra.printList(compras);
+      
+        
     }
-    
-    
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-
-    @FXML
-    private void handleButton2Action(ActionEvent event) {
     }
 
     @FXML
-    private void handleButton3Action(ActionEvent event) {
+    private void handleButtonCLAction(ActionEvent event) {
+        entrada.setText("");
     }
-    
+
 }
