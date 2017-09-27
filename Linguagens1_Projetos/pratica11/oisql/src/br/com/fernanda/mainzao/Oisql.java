@@ -37,7 +37,7 @@ public class Oisql {
                         int idade = resultadoQuery.getInt("idade");
                         String RA = resultadoQuery.getString("RA");
                         
-                        System.out.println(Integer.toString(id)+ "nome; " + nome +"idade: "+ idade + "RA: "+ RA);
+                        System.out.println(Integer.toString(id)+ " nome: " + nome +"; idade: "+ idade + "; RA: "+ RA);
                     }
                     ps.close();
                     conexao.close();
