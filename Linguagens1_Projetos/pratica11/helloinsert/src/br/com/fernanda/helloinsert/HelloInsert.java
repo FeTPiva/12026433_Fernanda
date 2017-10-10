@@ -6,11 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.Scanner;
 
-/**
- *
- * @author Aluno 07
- */
+
 public class HelloInsert {
 
     /**
@@ -20,20 +18,22 @@ public class HelloInsert {
         // TODO code application logic here
         Connection conexao = ConnectionFactory.getConnection(); //n precisa dar new pq é static
         //prestar atenção na sequencia da tab do sql
-        String sql = "INSERT INTO tblalunos (`nome`,`RA`,`idade`) VALUES (?,?,?)"; //no prinmeiro crase e no segundo aspas se for inserir por ali
+        String sql = "INSERT INTO alunos (`nome`,`RA`,`idade`) VALUES (?,?,?)"; //no prinmeiro crase e no segundo aspas se for inserir por ali
         PreparedStatement ps;
         try {
+            
+       
 
             ps = conexao.prepareStatement(sql);
             ps.setString(1, "AOutra2");
-            ps.setInt(3, 155);
             ps.setString(2, "2222");
+            ps.setInt(3, 155);
 
             ps.execute();
             ps.close();
             System.out.println("não lascou :D");
         } catch (SQLException ex) {
-            System.out.println("lascouuuu ,-,");
+            System.out.println("lascouuuu ,-,"+ "/n"+"lembra de olha se o nome da tab ta certo, e do esquema '-'");
         }
 
     }
