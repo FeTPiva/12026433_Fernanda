@@ -33,7 +33,7 @@ public class HelloInsert {
             ps.close();
             System.out.println("não lascou :D");
         } catch (SQLException ex) {
-            System.out.println("lascouuuu ,-,"+ "/n"+"lembra de olha se o nome da tab ta certo, e do esquema '-'");
+            System.out.println("lascouuuu ,-, lembra de olha se o nome da tab ta certo, e do esquema '-'");
         }
 
     }

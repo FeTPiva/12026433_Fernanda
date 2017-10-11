@@ -1,0 +1,15 @@
+SELECT a.nome , a.idade, a.idorientador, o.nome, o.area FROM tblaluno AS a
+
+JOIN tblorientador AS o
+
+ON a.idorientador = o.idorientador
+
+
+
+tblemprestimo:
+SELECT l.nome_livro, l.editora, u.nome, u.registro FROM tbllivro AS l
+JOIN tblemprestimo As e
+ON l.idlivro = e.idlivro
+JOIN tblusuarios AS u
+ON e.idusuario = u.idusuario
+Where l.nome_livro = "livro 1"
