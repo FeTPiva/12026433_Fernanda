@@ -13,3 +13,28 @@ ON l.idlivro = e.idlivro
 JOIN tblusuarios AS u
 ON e.idusuario = u.idusuario
 Where l.nome_livro = "livro 1"
+
+
+pedidos :
+SELECT pedidos.idpedido, pedidos.dataa, pedidos.total, pedidos.forma_de_padamento, pedidos.status, a.idusuario FROM pedidos 
+
+Join usuario as a
+
+on a.idusuario = pedidos.idusuario
+
+
+
+
+tblpedisoprod
+SELECT rel.idtbl_pedido_produto, ped.idpedido, prod.idprodutos, rel.qntcdproduto, rel.precounitario, rel.precottl FROM tbl_pedido_produto as rel
+join pedidos as ped
+on rel.idpedido = rel.idpedido
+join produtos as prod
+on prod.idprodutos = rel.idproduto
+
+
+
+estoque
+SELECT idestoque, p.idprodutos, idestoque, idFornecedor, dataa FROM estoque as e
+join produtos as p
+on p.idprodutos = e.idprod
