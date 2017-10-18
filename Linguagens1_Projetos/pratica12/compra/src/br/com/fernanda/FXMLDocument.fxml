@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fernanda.FXMLCompraControllerCompra">
+   <children>
+      <TabPane layoutY="-3.0" prefHeight="409.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Login Cliente">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="151.0" layoutY="72.0" text="email" />
+                        <Label layoutX="152.0" layoutY="145.0" text="senha" />
+                        <TextField fx:id="txtEmail" layoutX="133.0" layoutY="99.0" />
+                        <TextField fx:id="txtSenha" layoutX="133.0" layoutY="178.0" />
+                        <Button fx:id="btnLogin" layoutX="154.0" layoutY="235.0" mnemonicParsing="false" onAction="#Login" text="Login" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Comprar">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="83.0" layoutY="54.0" text="nome produto" />
+                        <Label layoutX="83.0" layoutY="137.0" text="quantidade" />
+                        <TextField fx:id="txtNomeProd" layoutX="83.0" layoutY="89.0" />
+                        <TextField fx:id="txtQuant" layoutX="83.0" layoutY="178.0" />
+                        <Button fx:id="btnCompra" layoutX="122.0" layoutY="256.0" mnemonicParsing="false" onAction="#Comprar" text="Comprar!" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
