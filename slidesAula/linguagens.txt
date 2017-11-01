@@ -40,3 +40,5 @@ git checkout master  // muda pra pasta do master
 
 
 http://www.oracle.com/technetwork/java/javafxscenebuilder-1x-archive-2199384.html#javafx-scenebuilder-2.0-oth-JPR
+
+cabo stp é blindado contra interferecia=> melhor (é um cabo ethernet)
