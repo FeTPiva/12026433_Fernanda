@@ -12,12 +12,14 @@ import java.net.Socket;
 import java.util.Date;
 import java.util.Scanner;
 
+//o ip é 192.168.0.170
+
 public class main {
 
     public static void main(String[] args) {
 
         try {
-            ServerSocket servidor = new ServerSocket(8000);
+            ServerSocket servidor = new ServerSocket(8001);
             System.out.println("Servidor ouvindo porta 12345");
             while (true) {
                 Socket cliente = servidor.accept();
@@ -33,9 +35,10 @@ public class main {
 
                     //  String a = scan.nextLine();
                     // System.out.println(a);
-                    out.println(scan.nextLine());
+                    
                     String s = in.nextLine();
-                    System.out.println(s);
+                    out.println(scan.nextLine());
+                     System.out.println(s);
 
                 }
                 cliente.close();
