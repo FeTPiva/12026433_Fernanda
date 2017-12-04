@@ -32,6 +32,8 @@ public class FXMLCompraControllerCompra implements Initializable {
     private TextField txtQuant;
     @FXML
     private Button btnCompra;
+    @FXML
+    private Button openCadastro;
 
     /**
      * Initializes the controller class.
@@ -43,10 +45,19 @@ public class FXMLCompraControllerCompra implements Initializable {
 
     @FXML
     private void Login(ActionEvent event) {
+        
     }
 
     @FXML
     private void Comprar(ActionEvent event) {
+        
+        
+    }
+
+    @FXML
+    private void openCadastro(ActionEvent event) {
+        
+        
     }
     
 }

@@ -19,6 +19,7 @@
                         <TextField fx:id="txtEmail" layoutX="133.0" layoutY="99.0" />
                         <TextField fx:id="txtSenha" layoutX="133.0" layoutY="178.0" />
                         <Button fx:id="btnLogin" layoutX="154.0" layoutY="235.0" mnemonicParsing="false" onAction="#Login" text="Login" />
+                        <Button fx:id="openCadastro" layoutX="365.0" layoutY="150.0" mnemonicParsing="false" onAction="#openCadastro" text="Não e cadastrado? clique aki" />
                      </children>
                   </AnchorPane>
             </content>

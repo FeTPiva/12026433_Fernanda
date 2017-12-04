@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="359.0" prefWidth="423.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fernanda.FXMLDocumentController">
+   <children>
+      <Label layoutX="41.0" layoutY="27.0" text="nome" />
+      <Label layoutX="47.0" layoutY="77.0" text="cpf" />
+      <Label layoutX="39.0" layoutY="132.0" text="endereço" />
+      <Label layoutX="43.0" layoutY="180.0" text="telefone" />
+      <Label layoutX="43.0" layoutY="234.0" text="senha" />
+      <Label layoutX="41.0" layoutY="284.0" text="email" />
+      <TextField fx:id="txtnome" layoutX="126.0" layoutY="23.0" prefHeight="25.0" prefWidth="230.0" />
+      <TextField fx:id="txtcpf" layoutX="126.0" layoutY="73.0" prefHeight="25.0" prefWidth="230.0" />
+      <TextField fx:id="txtendereco" layoutX="126.0" layoutY="128.0" prefHeight="25.0" prefWidth="230.0" />
+      <TextField fx:id="txttelefone" layoutX="126.0" layoutY="176.0" prefHeight="25.0" prefWidth="230.0" />
+      <TextField fx:id="txtsenha" layoutX="126.0" layoutY="230.0" prefHeight="25.0" prefWidth="230.0" />
+      <TextField fx:id="txtemail" layoutX="126.0" layoutY="280.0" prefHeight="25.0" prefWidth="230.0" />
+      <Button fx:id="btncadastro" layoutX="178.0" layoutY="320.0" mnemonicParsing="false" onAction="#cadastrarr" text="Cadastrar" />
+   </children>
+</AnchorPane>

@@ -15,7 +15,7 @@
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Label layoutX="60.0" layoutY="47.0" text="nome user" />
-                        <Label layoutX="75.0" layoutY="131.0" text="senha" />
+                        <Label layoutX="60.0" layoutY="131.0" text="senha" />
                         <TextField fx:id="txtNomeUser" layoutX="60.0" layoutY="81.0" />
                         <TextField fx:id="txtSenha" layoutX="60.0" layoutY="161.0" />
                         <Button fx:id="btnLogin" layoutX="109.0" layoutY="222.0" mnemonicParsing="false" onAction="#Login" text="login" />
