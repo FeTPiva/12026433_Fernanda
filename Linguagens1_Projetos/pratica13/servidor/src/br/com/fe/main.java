@@ -5,21 +5,40 @@
  */
 package br.com.fe;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Date;
 import java.util.Scanner;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.BufferedWriter;
+import java.io.Writer;
+import java.util.ArrayList;
 
-//o ip é 192.168.0.170
 
-public class main {
+
+public class main extends Thread {
+ private static ArrayList<BufferedWriter> clientes;
+    private InputStream input;
+    private InputStreamReader read;
+    private BufferedReader buffer;
+    private ServerSocket socket;
+
+    
+    
+    
+     
 
     public static void main(String[] args) {
 
         try {
-            ServerSocket servidor = new ServerSocket(8001);
+            ServerSocket servidor = new ServerSocket(9000);
             System.out.println("Servidor ouvindo porta 12345");
             while (true) {
                 Socket cliente = servidor.accept();
@@ -35,10 +54,16 @@ public class main {
 
                     //  String a = scan.nextLine();
                     // System.out.println(a);
-                    
-                    String s = in.nextLine();
                     out.println(scan.nextLine());
-                     System.out.println(s);
+                    String s = in.nextLine();
+                   
+                    
+                    Thread t = new Thread(s);
+                    t.start();
+                    System.out.println(s);
+              
+                
+             
 
                 }
                 cliente.close();

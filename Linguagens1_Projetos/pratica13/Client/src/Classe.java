@@ -12,8 +12,7 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-import sun.util.logging.PlatformLogger;
-import sun.util.logging.PlatformLogger.Level;
+
 
 public class Classe {
 
@@ -31,15 +30,26 @@ public class Classe {
                 Scanner entradaRede = new Scanner(cliente.getInputStream());
                 Scanner teclado = new Scanner(System.in);
                 PrintStream saidaRede = new PrintStream(cliente.getOutputStream());
+                    PrintWriter out = new PrintWriter(cliente.getOutputStream(), true); 
                     )
                 {
                     System.out.println(entradaRede.nextLine());
                     String msg = "";
+                     
                     while (!msg.equals("tchau!")) {
+                        
+                        
+                                          
                         msg = teclado.nextLine();
-                        saidaRede.println(msg);
+                        Thread t1 = new Thread(msg);
+                        t1.start();
+                        
+                           saidaRede.println(msg);
                         msg = entradaRede.nextLine();
                         System.out.println(msg);
+                        
+                  
+                        
                     }
                     
                     System.out.println("aplicação finalizada. pressione enter para fechar o prog");
@@ -49,7 +59,7 @@ public class Classe {
 
             } catch (IOException e) {
                 
-            Logger.getLogger(Classe.class.getName()).log(Level.SEVERE, null, e);
+            //Logger.getLogger(Classe.class.getName()).log(Level.SEVERE, null, e); isso aki n tava funcionando n sei pq ,-,
             }
         
          System.exit(0);
