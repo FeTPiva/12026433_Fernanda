@@ -82,6 +82,7 @@ public class FXMLDocumentController implements Initializable {
 
         } catch (SQLException ex) {
             System.out.println("lascouuuu ,-, lembra de olha se o nome da tab ta certo, e do esquema '-'");
+            System.out.println(ex.getMessage());
         }
     }
 }

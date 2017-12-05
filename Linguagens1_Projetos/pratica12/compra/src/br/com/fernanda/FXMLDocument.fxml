@@ -33,6 +33,7 @@
                         <TextField fx:id="txtNomeProd" layoutX="83.0" layoutY="89.0" />
                         <TextField fx:id="txtQuant" layoutX="83.0" layoutY="178.0" />
                         <Button fx:id="btnCompra" layoutX="122.0" layoutY="256.0" mnemonicParsing="false" onAction="#Comprar" text="Comprar!" />
+                        <Button fx:id="btnPesquisar" layoutX="357.0" layoutY="50.0" mnemonicParsing="false" onAction="#Pesquisar" text="Pesquisar" />
                      </children>
                   </AnchorPane>
             </content>
